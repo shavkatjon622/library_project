@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware', # allauth ni qoshib migrate qilmoqchi bolganimda qoshishni soragani uchun qoshdim ammo hozircha nima ish bajarishini bilmayman.
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # bu qism static filelarni saqlab turish uchun qoshildi whitenoise dan keyin   
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # bu qism static filelarni saqlab turish uchun qoshildi whitenoise dan keyin
 
 ROOT_URLCONF = 'library.urls'
 
