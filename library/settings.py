@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount', # bu yordamida social accountlar bilan registratsiyani amalga oshirish mumkin bola
     'dj_rest_auth.registration',
+    'whitenoise.runserver_nostatic', # bu static file larni serverda ishlashini taminlab beradigan packege
 
     
     # local apps
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #white noise ishlashi uchun shu middleware yozildi
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -53,6 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware', # allauth ni qoshib migrate qilmoqchi bolganimda qoshishni soragani uchun qoshdim ammo hozircha nima ish bajarishini bilmayman.
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # bu qism static filelarni saqlab turish uchun qoshildi whitenoise dan keyin   
 
 ROOT_URLCONF = 'library.urls'
 
